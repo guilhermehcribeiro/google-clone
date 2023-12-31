@@ -9,6 +9,7 @@ export const SearchEngineRepository = {
         next: { revalidate: 10000 },
       }
     );
+    if (!res?.ok) throw new Error("Error to fetch data");
     const data = await res?.json();
     return data;
   },
