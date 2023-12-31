@@ -3,6 +3,10 @@ export type ISearchItem = {
   link: string;
   formattedUrl: string;
   htmlSnippet: string;
+  displayLink: string;
+  image: {
+    contextLink: string;
+  };
 };
 
 export type ISearch = {
