@@ -5,11 +5,15 @@ import Link from "next/link";
 type IWebSearchPage = {
   searchParams: {
     searchTerm: string;
+    start: string;
   };
 };
 
 export default async function WebSearchPage({ searchParams }: IWebSearchPage) {
-  const res = await SearchEngineRepository.search(searchParams?.searchTerm);
+  const res = await SearchEngineRepository.search(
+    searchParams?.searchTerm,
+    searchParams?.start
+  );
 
   if (!res?.items) {
     return (

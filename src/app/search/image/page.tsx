@@ -5,6 +5,7 @@ import Link from "next/link";
 type IImageSearchPage = {
   searchParams: {
     searchTerm: string;
+    start: string;
   };
 };
 
@@ -13,6 +14,7 @@ export default async function ImageSearchPage({
 }: IImageSearchPage) {
   const res = await SearchEngineRepository.search(
     searchParams?.searchTerm,
+    searchParams?.start,
     true
   );
 
